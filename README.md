@@ -1,6 +1,9 @@
 AnimatedPathView
 ================
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AnimatedPathView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1317)
+
+
 An animated path view following the methods in a blog post from Romain Guy here:<br>
 http://www.curious-creature.org/2013/12/21/android-recipe-4-path-tracing/<br>
 Per the blog post, I will be adding SVG support soon.
@@ -82,4 +85,19 @@ view.setOnClickListener(new View.OnClickListener() {
         anim.start();
     }
 }); 
+```
+
+If you just want to use straight lines, you can use an array of points to specify your path such as:
+```java
+float[][] points = new float[][]{
+        {0, 0},
+        {view.getWidth(), 0},
+        {view.getWidth(), view.getHeight()},
+        {0, view.getHeight()},
+        {0, 0},
+        {view.getWidth(), view.getHeight()},
+        {view.getWidth(), 0},
+        {0, view.getHeight()}
+};
+view.setPath(points);
 ```
